@@ -8,5 +8,5 @@ export default interface ISpace {
   spaceName: string;
   invitedList: Invited[];
   users: User[];
-  evets: Event[];
+  events: Event[];
 }
