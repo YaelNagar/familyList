@@ -1,15 +1,9 @@
-import {User, UserSchema} from "./user";
-import { Schema } from "mongoose";
+import IUser from "./user";
 
-export interface Message {
+export default interface IMessage {
   _id: string;
   date: Date;
-  user: User;
+  user: IUser;
   content: string;
 }
 
-export const messageSchema: Schema<Message> = new Schema({
-  date: { type: Date, required: true },
-  user: { type: UserSchema, required: true },
-  content: { type: String, required: true }
-});

@@ -1,17 +1,12 @@
-import {Task, taskSchema} from "./task";
-import {Message, messageSchema} from "./message";
-import { Schema } from "mongoose";
-export default interface Event {
+import ITask from "./task";
+import IMessage from "./message";
+
+export default interface IEvent {
   _id: string;
   name: string;
   date: Date;
-  tasks: Task[];
-  messages: Message[];
+  tasks: ITask[];
+  messages: IMessage[];
+  address: string;
 }
 
-export const EventSchema: Schema<Event> = new Schema({
-  name: { type: String, required: true },
-  date: { type: Date, required: true },
-  tasks: { type: [taskSchema], required: true },
-  messages: { type: [messageSchema], required: true },
-});

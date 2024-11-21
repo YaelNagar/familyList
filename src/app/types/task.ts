@@ -1,17 +1,10 @@
-import { User, UserSchema } from "./user";
-import { Schema } from "mongoose";
+import IUser from "./user";
 
-export interface Task {
+export default interface ITask {
   _id: string;
   title: string;
   description: string;
   done: boolean;
-  user: User;
+  user: IUser;
 }
 
-export const taskSchema: Schema<Task> = new Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  done: { type: Boolean, required: true },
-  user: { type: UserSchema, required: true },
-});
